@@ -15,7 +15,7 @@ app.use(cors({
     methods: 'GET,POST,PUT,DELETE',
 }))
 
-await connectDB(); 
+await connectDB(); // connecting to the project database
 
 
 app.use(express.json());
