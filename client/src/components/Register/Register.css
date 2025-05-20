@@ -1,0 +1,26 @@
+
+
+
+.register-page{
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.register-form-container{
+    background-color: black;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+
+form{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}

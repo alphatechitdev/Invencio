@@ -1,4 +1,4 @@
-import item from "../Models/Items";
+import item from "../Models/items.ts";
 
 
 
@@ -8,7 +8,7 @@ class ItemsController {
     }
 
 
-    async addItem(params){
+    async addItem(params:""){
         try {
             const newItem = new item(params);
             await newItem.save();
