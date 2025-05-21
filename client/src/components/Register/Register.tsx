@@ -9,9 +9,11 @@ const Register = () => {
 
     const {register, handleSubmit, formState:{errors}} = useForm<RegisterCredsType>();
     const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleRegister = async (creds:RegisterCredsType) => {
         try {
+            setLoading(true);
             const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/Register`, {creds});
             if (response.data.success) {
                 setMessage("Registration successful");
@@ -20,6 +22,8 @@ const Register = () => {
             }
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     }
     return (
@@ -43,7 +47,7 @@ const Register = () => {
                     <input type="password" {...register("password", {required:true})}/>
                     {errors.email && <p style={{color:'red'}}>{errors.email.message}</p>}
 
-                    <button type="submit">Register</button>
+                    <button type="submit">{loading? "Registering" : "Register"}</button>
 
                 </form>
             </div>

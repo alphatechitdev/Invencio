@@ -31,15 +31,16 @@ class UserController {
   async Login(creds: UserCreds) {
     try {
       const foundUser = await User.findOne({ username: creds.username });
+      console.log(foundUser);
       if (!foundUser) return { success: false, account: false, message: "User not found" };
 
       const isMatch = await bcrypt.compare(creds.password, foundUser.password ?? "");
       if (!isMatch) return { success: false, account: true, message: "Invalid password" };
 
-      return { success: true, user: foundUser };
+      return { success: true, user: foundUser, account:true};
     } catch (error) {
       console.error("Error While Logging In:", error);
-      return { success: false };
+      return { success: false, account:false};
     }
   }
 }

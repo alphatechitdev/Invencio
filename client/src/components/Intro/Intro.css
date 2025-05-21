@@ -1,6 +1,6 @@
 :root {
   --primary-color: #4e73df;
-  --accent-color: #1cc88a;
+  --accent-color: #003366;
   --bg-gradient-light: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   --bg-gradient-dark: linear-gradient(135deg, #1d1f27, #2c2f39);
   --text-dark: #333;
@@ -56,7 +56,7 @@
 }
 
 .CTA button:hover {
-  background-color: #17a673;
+  background-color: #012244;
 }
 
 .features {

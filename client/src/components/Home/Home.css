@@ -1,0 +1,19 @@
+
+:root {
+  --primary-color: #4e73df;
+  --accent-color: #003366;
+  --bg-gradient-light: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  --bg-gradient-dark: linear-gradient(135deg, #1d1f27, #2c2f39);
+  --text-dark: #333;
+  --text-light: #f9f9f9;
+}
+
+.home-page {
+  background: var(--bg-gradient-light);
+  padding: 60px 20px;
+  height: 100vh;
+  text-align: center;
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

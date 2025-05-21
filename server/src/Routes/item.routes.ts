@@ -5,14 +5,14 @@ const ItemEndpoint = express.Router();
 
 ItemEndpoint.post('/addItem', async (req, res) => {
     try {
-        const data = req.body;
+        const {item} = req.body;
         const IC = new ItemsController();
-        const result = await IC.addItem(data);
+        const result = await IC.addItem(item);
         if (!result.success) {
-            res.status(400).send({ message: 'Failed to add item' });
+            res.status(400).json({success:false})
             return;
         }
-        res.status(201).send(result);
+        res.status(200).json({success:true})
     } catch (error) {
         console.error("Error In Function/Endpoint, ", error);
         res.status(500).send({ message: 'Internal server error' });

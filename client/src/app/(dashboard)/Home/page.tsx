@@ -1,9 +1,9 @@
-import Index from "@/components/Items/Index/Index";
+import Home from '../../../components/Home/Home';
 
 
 export default function HomePage() {
     return (
-        <Index/>
+        <Home/>
     )
 };
 
