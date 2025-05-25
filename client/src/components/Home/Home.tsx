@@ -5,7 +5,7 @@ import './Home.css';
 
 
 
-const Home = () => {
+const HomeComponent = () => {
     return (
         <div className="home-page">
             <div className="Functions">
@@ -16,4 +16,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default HomeComponent;

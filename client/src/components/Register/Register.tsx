@@ -4,6 +4,7 @@ import {useForm} from 'react-hook-form';
 import './Register.css';
 import axios from "axios";
 import { useState } from "react";
+import Link from "next/link";
 
 const Register = () => {
 
@@ -48,6 +49,8 @@ const Register = () => {
                     {errors.email && <p style={{color:'red'}}>{errors.email.message}</p>}
 
                     <button type="submit">{loading? "Registering" : "Register"}</button>
+                    <p>OR</p>
+                    <Link href="/Login"><button type="button">Already Have An Account? Login</button></Link>
 
                 </form>
             </div>
