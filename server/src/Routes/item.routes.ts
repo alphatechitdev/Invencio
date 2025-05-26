@@ -19,4 +19,13 @@ ItemEndpoint.post('/addItem', async (req, res) => {
     }
 });
 
+ItemEndpoint.get('/getItems', async (req, res) => {
+    try {
+        const category = 
+        const response =  
+    } catch(error) {
+        console.error("Error While ")
+    }
+})
+
 export default ItemEndpoint;
