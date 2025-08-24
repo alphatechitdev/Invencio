@@ -36,9 +36,9 @@ AuthEndpoint.post('/Login', async (req, res) => {
                 const token = generateToken({username:creds.username});
                 res.cookie('token', token, {
                     httpOnly: true,
+                    sameSite:'strict',
                     secure:false,
-                    maxAge: 900000, // 15 minutes
-                    sameSite:'strict'
+                    maxAge: 3600000
                 });
                 res.status(200).json({success:true});
             }

@@ -1,27 +1,32 @@
-import axios from "axios"
-import { useEffect } from "react"
+"use client";
+
+import { ReactNode, useEffect } from "react"
 import useAuth from "../Context/AuthProvider"
+import { useRouter } from "next/navigation";
+import AuthLoading from "../Loading/AuthLoading";
 
 
+export default function ProtectedRoute({children}:{children:ReactNode}){
+    const {isAuthenticated} = useAuth();
 
-export const ProtectedRoute = () => {
+    const router = useRouter();
 
-    const {isAuthenticated, setIsAuthenticated} = useAuth();
-
-    
-    useEffect(() => {
-        try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/protected/protected-route`, {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials:true
-            })
-
-            if(!response.data.success) {
-               
-            }
+    useEffect (() => {
+        if(isAuthenticated == false) {
+            router.push('/Login')
         }
-    })
+    }, [isAuthenticated]);
 
-}
+    if(isAuthenticated == null) {
+        return (
+            <AuthLoading/>
+        )
+    }
+
+    return (
+        <>
+        {children}
+        </>
+    )
+};
+

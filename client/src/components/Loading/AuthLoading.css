@@ -1,0 +1,19 @@
+
+
+
+.auth-loading-page{
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    background-color: #003366;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color:white;
+}
+

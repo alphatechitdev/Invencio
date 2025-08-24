@@ -2,6 +2,6 @@
 
 
 export interface AuthContextTypes{
-    isAuthenticated:boolean;
-    setIsAuthenticated:(value:boolean) => void;
+    isAuthenticated:boolean|null;
+    setIsAuthenticated:(value:boolean|null) => void;
 }
