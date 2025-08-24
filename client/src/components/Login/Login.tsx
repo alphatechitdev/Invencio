@@ -16,7 +16,13 @@ const Login = () => {
     const handleLogin = async (creds:LoginCredsType) => {
        try {
          setLoading(true);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/Login`, {creds});
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/Login`, {creds}, {
+            headers: {
+                'Content-Type':'application/json',
+            },
+            withCredentials:true,
+        });
+        
         if(!response.data.success) {
             setMessage(response.data.message);
             alert(response.data.message);
